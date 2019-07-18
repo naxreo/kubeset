@@ -8,6 +8,7 @@
 CONFDIR="${HOME}/.kube"
 CONFARRAY=()
 SETFILE="${HOME}/.kubeconf"
+MYSHELL=$SHELL
 
 ## listing kubeconfig file up
 for i in `ls ${CONFDIR}/*.kubeconfig`
@@ -39,3 +40,4 @@ echo "Set" ${CONFARRAY[${ENT}]}
 echo "export KUBECONFIG=${CONFARRAY[${ENT}]}" > ${SETFILE}
 source ${SETFILE}
 
+$MYSHELL

@@ -9,3 +9,6 @@ kubeset
 * ${HOME}/.kube 아래 kubeconfig 파일을 .kubeconfig 확장자로 저장
 
 
+# Change Log
+* first commit
+* add SHELL command at the last line to enter new console
