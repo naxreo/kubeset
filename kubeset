@@ -2,13 +2,10 @@
 # mkdir ${HOME}/.kube
 # remove ${HOME/.kube/conf
 # save your kubeconf files named *.kubeconf
-# add below line in .bashrc or .profile
-# source ${HOME}/.kubeconf
 
 CONFDIR="${HOME}/.kube"
 CONFARRAY=()
 SETFILE="${HOME}/.kubeconf"
-MYSHELL=$SHELL
 
 ## listing kubeconfig file up
 for i in `ls ${CONFDIR}/*.kubeconfig`
@@ -37,7 +34,10 @@ fi
 ## set env
 echo "Set" ${CONFARRAY[${ENT}]}
 
-echo "export KUBECONFIG=${CONFARRAY[${ENT}]}" > ${SETFILE}
-source ${SETFILE}
+## change logic to make config from env
+#echo "export KUBECONFIG=${CONFARRAY[${ENT}]}" > ${SETFILE}
+#source ${SETFILE}
+#$MYSHELL
 
-$MYSHELL
+ln -sf ${CONFARRAY[${ENT}]} ${CONFDIR}/config
+
