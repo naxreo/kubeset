@@ -21,7 +21,7 @@ do
   idx=$((idx + 1))
 done
 echo
-echo -n "Enter number of config you use: "
+echo -n "Enter number of config you want: "
 read ENT
 
 ## filter wrong input
