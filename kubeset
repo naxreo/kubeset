@@ -1,0 +1,41 @@
+#!/bin/bash
+# mkdir ${HOME}/.kube
+# remove ${HOME/.kube/conf
+# save your kubeconf files named *.kubeconf
+# add below line in .bashrc or .profile
+# source ${HOME}/.kubeconf
+
+CONFDIR="${HOME}/.kube"
+CONFARRAY=()
+SETFILE="${HOME}/.kubeconf"
+
+## listing kubeconfig file up
+for i in `ls ${CONFDIR}/*.kubeconfig`
+do
+  CONFARRAY+=(${i})
+done
+
+## show and select menu
+idx=0
+for i in ${CONFARRAY[@]}
+do
+  echo "[" ${idx} "]" ${i}
+  idx=$((idx + 1))
+done
+echo
+echo -n "Enter number of config you use: "
+read ENT
+
+## filter wrong input
+if [[ ${ENT} > ${#CONFARRAY[@]} ]]
+then
+  echo "Wrong select"
+  exit 2
+fi
+
+## set env
+echo "Set" ${CONFARRAY[${ENT}]}
+
+echo "export KUBECONFIG=${CONFARRAY[${ENT}]}" > ${SETFILE}
+source ${SETFILE}
+
