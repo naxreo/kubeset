@@ -7,6 +7,13 @@ CONFDIR="${HOME}/.kube"
 CONFARRAY=()
 SETFILE="${HOME}/.kubeconf"
 
+## show current setting
+CURRENT=$(ls -l ${CONFDIR}/config | awk -F'->' '{print $2}')
+echo "Current kubeset"
+echo $CURRENT
+echo
+
+
 ## listing kubeconfig file up
 for i in `ls ${CONFDIR}/*.kubeconfig`
 do
