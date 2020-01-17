@@ -34,10 +34,5 @@ fi
 ## set env
 echo "Set" ${CONFARRAY[${ENT}]}
 
-## change logic to make config from env
-#echo "export KUBECONFIG=${CONFARRAY[${ENT}]}" > ${SETFILE}
-#source ${SETFILE}
-#$MYSHELL
-
 ln -sf ${CONFARRAY[${ENT}]} ${CONFDIR}/config
 
