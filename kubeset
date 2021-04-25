@@ -31,8 +31,9 @@ echo
 echo -n "Enter number of config you want: "
 read ENT
 
+
 ## filter wrong input
-if [[ ${ENT} > ${#CONFARRAY[@]} ]]
+if [[ ${ENT} -gt ${#CONFARRAY[@]} ]]
 then
   echo "Wrong select"
   exit 2
