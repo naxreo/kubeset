@@ -34,3 +34,6 @@ If you need to run multiple clusters at the same time, kubeconfig files can be k
 * The simple way that it makes symbolic link .kube/config from one of .kubeconfig files
 * Type kubeset in command prompt. it makes a menu with kubeconfig files
 
+
+![kubeset](./image/screen.png)  
+
