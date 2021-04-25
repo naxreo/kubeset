@@ -27,7 +27,8 @@ kubeset
 Kubeset
 ===
 A bash script developed because of the difficulty of using various Kubernetes Clusters that use the same User name.  
-여러 클러스터를 동시에 운영해야 한다면 kubeconfig 파일을 깨끗하게 보관하고 바꿔가며 운영 할 수 있다.  
+If you need to run multiple clusters at the same time, kubeconfig files can be kept clean, changed, and operated.  
+
 
 # Usage
 * The simple way that it makes symbolic link .kube/config from one of .kubeconfig files
