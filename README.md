@@ -37,3 +37,23 @@ If you need to run multiple clusters at the same time, kubeconfig files can be k
 
 ![kubeset](./image/screen.png)  
 
+
+---
+kalias
+===
+A bash script to create alias shortcut from `.kube/*.kubeconfig` files  
+  
+bash or zsh function to list
+```bash
+## for kalias
+source ${HOME}/.kalias
+function kal() {
+	while IFS=" " read -r _ alias_command; do
+	    alias_name=$(echo "$alias_command"| cut -d'=' -f1)
+		config_file=$(echo "$alias_command" | cut -d'=' -f3 | tr -d "'")
+		config_name=$(basename "$config_file" .kubeconfig)
+		echo "$alias_name $config_name"
+    done < "${HOME}/.kalias"
+}
+```
+                                                   
